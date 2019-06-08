@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>PK Javascript Games Final</title>
+<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+    <style>
+        .button {
+  background-color: #fff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+font-family: Didact Gothic;
+            border: 2px solid #ff8a00;
+
+}
+         h1 {
+   font-family: Didact Gothic;
+ }
+       *{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#ab0000;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#000;color:#ff8a00;}h2{font-family:"Didact Gothic",sans-serif;} h1{font-family:"Didact Gothic",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
+    </style>
+    <title>Priya Maharban's RPS Game</title>
+</head>
+<body style="background-image:url(bg.gif)">
+<img src="rps.png" align="left">
+
+<div class="game">
+
+    <script>
+        // Question pop up box
+        var userChoice = prompt("Hey, let's play! Rock, paper or scissors?");
+        if (! userChoice) {
+            // User enters nothing
+            document.write("<p>Hey! You need to pick one!</p>");
+        } else {
+            // User
+            document.write("<p>Player 1:" + " " + userChoice + "</p>");
+        }
+        // Chances of computer choosing each option
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+            computerChoice = "rock";
+        } else if(computerChoice <= 0.67) {
+            computerChoice = "paper";
+        } else {
+            computerChoice = "scissors";
+        }
+
+        document.write("<p>Computer:" + " " + computerChoice + "</p>");
+        // Compare user vs computer answer
+        var compare = function(choice1,choice2) {
+            if (choice1 === choice2) {
+                return "You read my mind! It's a tie!";
+            }
+            if (choice1 === "rock") {
+                if (choice2 === "scissors") {
+                    // rock wins
+                    return "You win!";
+                } else {
+                    // paper wins
+                    return "Ha! You lose!";
+                }
+            }
+            if (choice1 === "paper") {
+                if (choice2 === "rock") {
+                    // paper wins
+                    return "You win!";
+                } else {
+                    // scissors wins
+                    return "Ha! You lose!";
+                }
+            }
+            if (choice1 === "scissors") {
+                if (choice2 === "rock") {
+                    // rock wins
+                    return "Ha! You lose!";
+                } else {
+                    // scissors wins
+                    return "You win!";
+                }
+            }
+        };
+        // Run the compare function
+        var results = compare(userChoice,computerChoice);
+        // Display results
+        document.write("<br><hr><br>" + results);
+    </script>
+
+</div>
+<br>
+<button class="button" onclick=location=URL>Play Again</button>
+<br>
+<br> 
+<div class="game">
+<h2>How about a different game?</h2>
+<br> 
+        <style>
+            canvas{
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+<!-- Making the canvas box size -->
+    <canvas id="snake" width="608" height="608"></canvas>
+    <script src="snake.js"></script>
+    </div>
+    <br>
+    
+<button class="button" onclick=location=URL>Start Over</button>
+<br>
+
+</body>
+</html>
